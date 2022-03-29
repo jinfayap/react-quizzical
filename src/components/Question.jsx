@@ -46,7 +46,7 @@ const Question = ({ question, setQuestions, submit }) => {
 
       <div className="Question__options">{optionElement}</div>
       {submit && (
-        <p>
+        <p className="Question__output-selected">
           You selected <strong>{question.selected}</strong>
         </p>
       )}

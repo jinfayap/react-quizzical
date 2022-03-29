@@ -84,6 +84,11 @@ body {
     border:none;
 }
 
+.Question__output-selected {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
 .Outcome {
     text-align: center;
     margin-top: 2em;
