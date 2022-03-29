@@ -61,6 +61,11 @@ body {
     margin-top: 2em;
 }
 
+.Outcome__playAgain {
+   text-align: center;
+   display:inline-flex
+}
+
 .Outcome__button {
     background-color:#4D5B9E;
     padding: 11px 21px;
@@ -68,4 +73,5 @@ body {
     border-radius: 10px;
     color: white;
     cursor: pointer;
+    margin-left: 2rem;
 }
