@@ -56,7 +56,7 @@ const Quiz = () => {
   };
 
   const fetchQuestions = () => {
-    fetch("https://opentdb.com/api.php?amount=3")
+    fetch("https://opentdb.com/api.php?amount=5")
       .then((res) => res.json())
       .then((data) => {
         let modifiedData = data["results"].map((question, index) => {

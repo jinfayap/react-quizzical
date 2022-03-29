@@ -1,4 +1,5 @@
 import React from "react";
+import DomPurify from "dompurify";
 
 const Question = ({ question, setQuestions, submit }) => {
   const selectAsAnswer = (id, option) => {
@@ -30,14 +31,19 @@ const Question = ({ question, setQuestions, submit }) => {
             : "incorrect"
         }
         onClick={() => selectAsAnswer(question.id, option)}
-      >
-        {option}
-      </span>
+        dangerouslySetInnerHTML={{ __html: DomPurify.sanitize(option) }}
+      ></span>
     );
   });
   return (
     <div className="Question">
-      <h3 className="Question__title">{question.question}</h3>
+      <h3
+        className="Question__title"
+        dangerouslySetInnerHTML={{
+          __html: DomPurify.sanitize(question.question),
+        }}
+      ></h3>
+
       <div className="Question__options">{optionElement}</div>
       {submit && (
         <p>
