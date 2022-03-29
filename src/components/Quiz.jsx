@@ -3,6 +3,8 @@ import Question from "./Question";
 import _ from "lodash";
 
 const Quiz = () => {
+  const [start, setStart] = useState(false);
+
   const [questions, setQuestions] = useState([]);
 
   const [submit, setSubmit] = useState(false);
@@ -75,25 +77,39 @@ const Quiz = () => {
   };
 
   return (
-    <div className="container">
-      {questionElements}
+    <div>
+      {start ? (
+        <div className="container">
+          {questionElements}
 
-      <div className="Outcome">
-        {completed && !submit && (
-          <button className="Outcome__button" onClick={checkAnswer}>
-            Check answers
-          </button>
-        )}
+          <div className="Outcome">
+            {completed && !submit && (
+              <button className="Outcome__button" onClick={checkAnswer}>
+                Check answers
+              </button>
+            )}
 
-        {completed && submit && (
-          <div className="Outcome__playAgain">
-            <h4>{response}</h4>
-            <button className="Outcome__button" onClick={restartQuiz}>
-              Play Again
+            {completed && submit && (
+              <div className="Outcome__playAgain">
+                <h4>{response}</h4>
+                <button className="Outcome__button" onClick={restartQuiz}>
+                  Play Again
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="Start__container">
+          <div>
+            <h2 className="Start__title">Quizzical</h2>
+            <p className="Start__description">Some description if needed</p>
+            <button className="Start__button" onClick={() => setStart(true)}>
+              Start quiz
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

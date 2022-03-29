@@ -1,5 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding:0;
 }
 
 body {
@@ -8,7 +10,32 @@ body {
 
 .container {
     max-width: 1024px;
-    margin: 0 auto;
+    margin: 3em auto;
+ 
+}
+
+.Start__container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Start__title {
+    color: #293264;
+    font-weight: 700;
+    font-size:2rem;
+}
+
+.Start__button {
+    background-color:#4D5B9E;
+    padding: 11px 21px;
+    margin-top: 1rem;
+    width:100%;
+    border: 1px solid #4D5B9E;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
 }
 
 .Question::after {
@@ -28,6 +55,7 @@ body {
 }
 
 .Question__options {
+    margin-top: 1rem;
     display:flex;
 }
 
