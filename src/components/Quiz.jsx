@@ -16,6 +16,7 @@ const Quiz = () => {
             options: question["incorrect_answers"].concat(
               question["correct_answer"]
             ),
+            selected: null,
           };
         });
 
@@ -27,9 +28,8 @@ const Quiz = () => {
     return (
       <Question
         key={question.id}
-        question={question.question}
-        options={question.options}
-        correct_answer={question.correct_answer}
+        question={question}
+        setQuestions={setQuestions}
       />
     );
   });
