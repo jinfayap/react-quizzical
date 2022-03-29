@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Question from "./Question";
+import _ from "lodash";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -61,8 +62,8 @@ const Quiz = () => {
             id: index + 1,
             question: question["question"],
             correct_answer: question["correct_answer"],
-            options: question["incorrect_answers"].concat(
-              question["correct_answer"]
+            options: _.shuffle(
+              question["incorrect_answers"].concat(question["correct_answer"])
             ),
             selected: null,
             isCorrect: false,
